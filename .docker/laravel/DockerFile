@@ -45,3 +45,9 @@ RUN docker-php-ext-install pdo pdo_pgsql pgsql
 RUN pecl install imagick && docker-php-ext-enable imagick
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+#Node.js, NPM, Yarn
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
+RUN apt-get install -y nodejs
+RUN npm install npm@latest -g
+RUN npm install yarn -g
